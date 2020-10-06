@@ -1,0 +1,29 @@
+<h1>Merchants List</h1>
+<a href="{% url 'merchants:new' %}">Add new merchant</a>
+{% if merchants_list %}
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Fax</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      {% for merchant in merchants_list %}
+        <tr>
+          <td>{{ merchant.name }}</td>
+          <td>{{ merchant.location }}</td>
+          <td>{{ merchant.email_address }}</td>
+          <td>{{ merchant.phone_number }}</td>
+          <td>{{ merchant.fax_number }}</td>
+          <td><a href="{% url 'merchants:detail' merchant.id %}">Show</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>No merchants available</p>
+{% endif %}

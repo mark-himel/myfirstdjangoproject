@@ -1,0 +1,8 @@
+<h1>Name: {{ merchant.name }}</h1>
+<h1>Location: {{ merchant.location }}</h1>
+<h1>Email: {{ merchant.email_address }}</h1>
+<h1>Phone: {{ merchant.phone_number }}</h1>
+{% if merchant.fax_number %}
+  <h1>Fax: {{ merchant.fax_number }}</h1>
+{% endif %}
+<h1>Loyalty: {{ merchant.loyalty }}</h1>
